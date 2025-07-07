@@ -2,7 +2,7 @@
 title: About Rspamd
 ---
 
-# About Rspamd === monkey-testing, conmmit 2 ===
+# About Rspamd === monkey-testing, patch-3, commit 1 ===
 
 ## Introduction
 
