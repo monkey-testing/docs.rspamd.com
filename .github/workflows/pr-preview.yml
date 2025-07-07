@@ -3,6 +3,7 @@ name: PR preview
 on:
   pull_request:
     types: [opened, reopened, synchronize]
+  workflow_dispatch:
 
 concurrency:
   group: pr-preview-${{ github.event.pull_request.number }}
@@ -12,6 +13,7 @@ jobs:
   pr-preview:
     name: "path: /pr/${{ github.event.pull_request.number }}"
     runs-on: ubuntu-latest
+    if: github.event_name == 'workflow_dispatch' || github.event.pull_request.head.repo.full_name == github.event.pull_request.base.repo.full_name
     steps:
       - uses: actions/checkout@v4
 
